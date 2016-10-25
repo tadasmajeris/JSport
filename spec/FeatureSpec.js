@@ -9,8 +9,14 @@ describe('Feature Test:', function(){
     airport = new Airport();
   });
 
-  it('planes can be instructed to to land at airport', function(){
+  it('planes can be instructed to land at airport', function(){
     plane.land(airport);
     expect(airport.planes()).toContain(plane);
+  });
+
+  it('planes can be instructed to take off from airport', function(){
+    plane.land(airport);
+    plane.takeoff();
+    expect(airport.planes()).not.toContain(plane);
   });
 });
